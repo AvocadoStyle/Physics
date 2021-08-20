@@ -1,7 +1,10 @@
 class UnitUtil:
-    def __init__(self, type, value):
+    def __init__(self, type=None, value=None):
         self._type = type
         self._value = value
+
+    def getVal(self):
+        return self._value
 
     def getAU(self):
         if self._type == "AU":
