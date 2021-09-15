@@ -1,11 +1,14 @@
-from Units import UnitUtil
+from typing import Final
+import Units
 
-class EquationUtil:
-    def __init__(self, type, value, Time=None, Distance=None):
-        self._unit = UnitUtil(type, value)
-        self.__hey = 1
-        self.__Time = Time
-        self.__Distance = Distance
+
+class EquationUtil(Units.UnitUtil):
+    def __init__(self, type_val, value, time, distance):
+        super().__init__(type_val, value)
+        self.__Time = time
+        self.__Distance = distance
+        self.LS: Final = 300000
+        # self.__unit = Units.UnitUtil(type_val, value)      #composition
 
     def getTime(self):
         return self.__Time
@@ -13,9 +16,18 @@ class EquationUtil:
     def getDistance(self):
         return self.__Distance
 
+    def getTimeOfLightSpeedInSecondsFromTheSun(self):
+           return self.getKM() / (self.LS)
+
+    def getTimeOfLightSpeedInMinutesFromTheSun(self):
+           return self.getKM() / (self.LS * 60)
+
+    def getTimeOfLightSpeedInHoursFromTheSun(self):
+           return self.getKM() / (self.LS * 60 * 60)
+
     def getKepler(self):
         TimeSquar = self.__Time*self.__Time
-        DistanceThird = self.__Distance/self._unit.getVal()
+        DistanceThird = self.__Distance/self.getVal()
         # DistanceThird = DistanceThird*DistanceThird*DistanceThird ####@@@@@@@@@todo@@@@@@@@@@@#####
         K = TimeSquar/DistanceThird
         return K
