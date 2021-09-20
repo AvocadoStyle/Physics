@@ -27,10 +27,10 @@ class EquationUtil(Units.UnitUtil):
     def getTimeOfLightSpeedInHoursFromTheSun(self):
            return self.getKM() / (self.LS * 60 * 60)
 
-    def getRs(self):
+    def getRsBlackHole(self):
         LS_meter = self.LS * 1000
         return (2*self.G*self.__massa) / math.pow(LS_meter, 2)
-    def getRsDensity(self):
+    def getRsDensityBlackHole(self):
         ###########
         # option1 #
         ###########
@@ -41,7 +41,7 @@ class EquationUtil(Units.UnitUtil):
         ###########
         # option2 #
         ###########
-        return (self.__massa / ((4/3)*3.14*math.pow(self.getRs(), 3))) / 1000
+        return (self.__massa / ((4/3)*3.14*math.pow(self.getRsBlackHole(), 3))) / 1000
 
     def getKepler(self):
         if not(self.__Time and self.getType() == "KM"):
@@ -67,5 +67,5 @@ class EquationUtil(Units.UnitUtil):
     def setTime(self, time):
         self.__Time = time
 
-    def setVal(self, time):
-        self.__Time = time
+    def setMassa(self, massa):
+        self.__massa = massa

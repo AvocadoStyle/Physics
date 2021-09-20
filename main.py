@@ -21,7 +21,7 @@ if __name__ == "__main__":
     # BlackHole RS check sun #
     ##########################
     sun = EquationUtil("AU", 0, None, (2 * math.pow(10, 30)))
-    print(sun.getRsDensity())
+    print(sun.getRsDensityBlackHole())
 
 
 
