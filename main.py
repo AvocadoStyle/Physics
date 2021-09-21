@@ -20,11 +20,33 @@ if __name__ == "__main__":
     ##########################
     # BlackHole RS check sun #
     ##########################
-    sun = EquationUtil("AU", 0, None, (2 * math.pow(10, 30)))
-    print(sun.getRsDensityBlackHole())
+    # sunMass = (2 * math.pow(10, 30))
+    # sunMassOneHundredFiftyMillion = sunMass * 150 * math.pow(10, 6)
+
+    ### sun = EquationUtil("AU", 0, None, (2 * math.pow(10, 30)))
+    # sunOneHundrerFiftyMill = EquationUtil("AU", 0, None, sunMassOneHundredFiftyMillion)
+    # print(sunOneHundrerFiftyMill.getHowMuchSunMass())
 
 
 
+
+
+    ################
+    # check parsec #
+    ################
+    # parsec = 1/40
+    # checkStar = EquationUtil(None, None, None, None)
+    # print(checkStar.getParallaxAU(parsec))
+
+
+
+    ##########################
+    # BlackHole RS check sun #
+    ##########################
+    sunMass = (2 * math.pow(10, 30))
+    twoTimeSunMass = sunMass*2
+    sunTwoMASS = EquationUtil(None, None, None, twoTimeSunMass, None, None, None)
+    print(sunTwoMASS.getLumminusBySunMass())
 
 
 
