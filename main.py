@@ -44,9 +44,9 @@ if __name__ == "__main__":
     # BlackHole RS check sun #
     ##########################
     sunMass = (2 * math.pow(10, 30))
-    twoTimeSunMass = sunMass*2
-    sunTwoMASS = EquationUtil(None, None, None, twoTimeSunMass, None, None, None)
-    print(sunTwoMASS.getLumminusBySunMass())
+    # twoTimeSunMass = sunMass*2
+    sunTwoMASS = EquationUtil(None, None, None, sunMass, None, None, None)
+    print(sunTwoMASS.getRsDensityBlackHole())
 
 
 

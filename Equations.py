@@ -12,16 +12,13 @@ class EquationUtil(Units.UnitUtil):
         self.__temperature = temperture
         self.__radius = radius
         self.__luminusity = luminusity
-
-
-        self.LS: Final = 300000 #light speed 300,000km per sec
+        self.LS: Final = 300000
         self.AU: Final = 150000000
         self.G: Final = 6.67 * math.pow(10, -11)
         self.SUN_MASS: Final = 2 * math.pow(10, 30)
         self.PARSEC_LIGHT_YEAR: Final = 3.26
         self.PARSEC_AU: Final = 206700
         self.PARSEC_KM: Final = 3.1 * math.pow(10, 13)
-        # self.__unit = Units.UnitUtil(type_val, value)      #composition
 
     def getTime(self):
         return self.__Time
@@ -40,16 +37,6 @@ class EquationUtil(Units.UnitUtil):
         return (2*self.G*self.__massa) / math.pow(LS_meter, 2)
 
     def getRsDensityBlackHole(self):
-        ###########
-        # option1 #
-        ###########
-        # LS_meter = self.LS * 1000
-        # a = 3 * math.pow(LS_meter, 6)
-        # b = 32*math.pi*math.pow(self.G, 3)*math.pow(self.__massa, 2)
-        # return a/b
-        ###########
-        # option2 #
-        ###########
         return (self.__massa / ((4/3)*3.14*math.pow(self.getRsBlackHole(), 3))) / 1000
 
     def getHowMuchSunMass(self):
@@ -89,6 +76,7 @@ class EquationUtil(Units.UnitUtil):
         if (self.__radius and self.__temperature) != None:
             return 4 * math.pi * self.__radius * math.pow(self.__temperature, 4)
         print("ERROR - radius or temperature is None, cannot calculate")
+
 
     def SpectrumTest(self):
         return SpecColors["purple"]
